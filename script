@@ -1,0 +1,120 @@
+#!/usr/bin/env python3
+import random
+from datetime import date
+from os import get_terminal_size
+
+def printf(item: str, color: str=None, style: str=None, newline:bool=False) -> None:
+    str = item
+    if(color != None):
+        color = bcolors.colorFromChar(color)
+        str = f"{color}" + str + f" {bcolors.ENDC}"
+    if(style != None):
+        style = bcolors.styleFromChar(style)
+        str = f"{style}" + str 
+
+    if(newline):
+        str = "\n\n\n            " + str + "\n\n\n            "
+    print(str)
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+    def colorFromChar(char: str) -> str:
+        if(char == 'b'): return bcolors.OKBLUE
+        if(char == 'g'): return bcolors.OKGREEN
+        if(char == 'c'): return bcolors.OKCYAN
+        if(char == 'r'): return bcolors.FAIL
+        if(char == 'h'): return bcolors.HEADER
+        if(char == 'e'): return bcolors.ENDC
+        if(char == 'w'): return bcolors.WARNING
+
+    def styleFromChar(char: str) -> str:
+        if(char == 'B'): return bcolors.BOLD
+        if(char == 'U'): return bcolors.UNDERLINE
+
+# ------------------------------------------------------------------------------------------------------------- #
+
+welcome = "Welcome to GRE Custom Vocab flashcards console application. " + "How to use:"
+preGuide = "See the README.md file on how to format your vocab file. \nName it vocab.txt, and keep it in the same directory as this script. Run 'python3 script'"
+printf(welcome, 'h', 'B')
+printf(preGuide, 'c')
+
+recentWordsCnt = 30
+recentWordsLen = recentWordsCnt * 3
+recentWords = False
+option = input('Press l or r to practice your recent words, or any other key to practice all words\n')
+if(option.lower() == 'l' or option.lower() == 'r'):
+    recentWords = True
+
+guide = "You will be shown a word, \n - Press m for meaning, \n - s for sentence, \n - Return or n for next word, \n - b to go back to the previous word (only one step back), \n - q to quit"
+printf(guide, 'g')
+
+with open('./vocab.txt', 'r+') as file:
+    vocab = file.readlines()
+
+words = {}
+words_list = []
+for i, item in enumerate(vocab):
+    if(' - ' in item):
+        word, meaning = item.split(' - ')
+        word, meaning = word.strip('\n'), meaning.strip('\n')
+        sentence = ""
+        if(i + 1 < len(vocab) and vocab[i + 1] != ''):
+            sentence = vocab[i + 1]
+            i += 1
+        words_list.append(word)
+        words[word] = {'meaning': meaning, 'sentence': sentence}
+
+if(recentWords and len(words_list) > recentWordsLen):
+    words_list = words_list[-recentWordsLen:]
+
+while(True):
+    word = random.choice(words_list)
+    separator = '-' * int(get_terminal_size().columns)
+    printf(separator, 'h', 'B')
+    printf(word, 'g', 'B', True)
+    # m for meaning, s for sentence, Return or n for next word, q to quit
+    while(True):
+        choice = input()
+        if(choice.lower() == 'm'):
+            printf(words[word]['meaning'], 'c')
+        elif(choice.lower() == 's'):
+            if(words[word]['sentence'] == ''):
+                printf("You have not added a sentence for this", 'r', None, True)
+            else:
+                sentence = words[word]['sentence']
+                split_sentence = sentence.split(' ')
+                output = ""
+                for item in split_sentence:
+                    if('(' in word):
+                        word = word.split('(')[0].strip()
+                    if(len(word) <= 3 and word in item.lower()):
+                        output += f"{bcolors.UNDERLINE}{bcolors.WARNING}{item}{bcolors.ENDC} "
+                    elif(word in item.lower() or word[:-1] in item.lower() or word[:-2] in item.lower()):
+                        output += f"{bcolors.UNDERLINE}{bcolors.WARNING}{item}{bcolors.ENDC} "
+                    else:
+                        output += item + ' '
+                printf(output, 'e')
+        elif(choice == '' or choice.lower() == 'n'):
+            break
+        elif(choice.lower() == 'b'):
+            word = previousWord
+            printf(separator, 'h', 'B') 
+            printf(word, 'g', 'B', True)
+        elif(choice.lower() == 'q'):
+            year = date.today().year
+            printf(f"Thanks for trying me out! © Kushal Joseph {year}", 'w', 'B', True)
+            printf(separator, 'h', 'B')
+            exit(0)
+        else:
+            print('M for meaning, S for sentence, N for next word, Q to quit', 'r')
+
+    previousWord = word
