@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="homepage.html">HOME</a></li>
+          <li><a href="index.html">PRACTICE</a></li>
+          <li><a href="add-words.html">ADD NEW WORDS</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="login.html">LOGIN/SIGNUP</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="button-group-home">
+            <button class="button-home light-green-button" id="practice-button" onclick="window.location.href = 'index.html';">Practice</button>
+            <button class="button-home light-green-button" id="add-word-button" onclick="window.location.href = 'add-words.html';">Add words to your Vocabulary</button>
+            <button class="button-home light-green-button" id="about-button" onclick="window.location.href = 'about.html';">About</button>
+            <button class="button-home light-green-button" id="login-button" onclick="window.location.href = 'login.html';">Login</button>
+        </div>  
+    </div>
+    <div class="copyright">
+        &copy; Kushal Joseph 2023
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
