@@ -47,7 +47,14 @@ preGuide = "See the README.md file on how to format your vocab file. \nName it v
 printf(welcome, 'h', 'B')
 printf(preGuide, 'c')
 
-recentWordsCnt = 30
+advancedMode = False
+advancedOption = "Press any key to practice regular words, 'a' to practice advanced words\n"
+printf(advancedOption, 'g')
+option = input()
+if(option.lower() == 'a'):
+    advancedMode = True
+
+recentWordsCnt = 18
 recentWordsLen = recentWordsCnt * 3
 recentWords = False
 option = input('Press l or r to practice your recent words, or any other key to practice all words\n')
@@ -57,7 +64,8 @@ if(option.lower() == 'l' or option.lower() == 'r'):
 guide = "You will be shown a word, \n - Press m for meaning, \n - s for sentence, \n - Return or n for next word, \n - b to go back to the previous word (only one step back), \n - q to quit"
 printf(guide, 'g')
 
-with open('./vocab.txt', 'r+') as file:
+filename = './vocab.txt' if not advancedMode else './advanced.txt'
+with open(filename, 'r') as file:
     vocab = file.readlines()
 
 words = {}
