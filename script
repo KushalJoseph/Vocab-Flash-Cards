@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import random
 from datetime import date
-from os import get_terminal_size
+from strings import *
+import yaml
 
 def printf(item: str, color: str=None, style: str=None, newline:bool=False) -> None:
     str = item
@@ -40,28 +41,36 @@ class bcolors:
         if(char == 'B'): return bcolors.BOLD
         if(char == 'U'): return bcolors.UNDERLINE
 
+def exitProgram() -> None:
+    global forgotten_words
+    with open('forgotten.yaml', 'w') as f:
+        yaml.dump(list(forgotten_words), f)
+
+    year = date.today().year
+    printf(f"Thanks for trying me out! © Kushal Joseph {year}", 'w', 'B', True)
+    printf(separator, 'h', 'B')
+    exit(0)
+
 # ------------------------------------------------------------------------------------------------------------- #
 
-welcome = "Welcome to GRE Custom Vocab flashcards console application. " + "How to use:"
-preGuide = "See the README.md file on how to format your vocab file. \nName it vocab.txt, and keep it in the same directory as this script. Run 'python3 script'"
 printf(welcome, 'h', 'B')
 printf(preGuide, 'c')
 
-advancedMode = False
-advancedOption = "Press any key to practice regular words, 'a' to practice advanced words\n"
-printf(advancedOption, 'g')
+advancedMode, forgottenMode, recentWordsMode = False, False, False
+printf(modeOption, 'g')
 option = input()
-if(option.lower() == 'a'):
+if(option.lower() == 'f'):
+    forgottenMode = True
+elif(option.lower() == 'a'):
     advancedMode = True
+
 
 recentWordsCnt = 18
 recentWordsLen = recentWordsCnt * 3
-recentWords = False
-option = input('Press l or r to practice your recent words, or any other key to practice all words\n')
-if(option.lower() == 'l' or option.lower() == 'r'):
-    recentWords = True
-
-guide = "You will be shown a word, \n - Press m for meaning, \n - s for sentence, \n - Return or n for next word, \n - b to go back to the previous word (only one step back), \n - q to quit"
+if(forgottenMode == False):
+    option = input(recent_words_option)
+    if(option.lower() == 'l' or option.lower() == 'r'):
+        recentWordsMode = True
 printf(guide, 'g')
 
 filename = './vocab.txt' if not advancedMode else './advanced.txt'
@@ -81,12 +90,27 @@ for i, item in enumerate(vocab):
         words_list.append(word)
         words[word] = {'meaning': meaning, 'sentence': sentence}
 
-if(recentWords and len(words_list) > recentWordsLen):
+if(recentWordsMode and len(words_list) > recentWordsLen):
     words_list = words_list[-recentWordsLen:]
 
+forgotten_words_set = set()
+read_yaml = yaml.safe_load(open('forgotten.yaml'))
+if(read_yaml == None):
+    if(forgottenMode): printf(no_forgotten_words, 'r')
+    forgottenMode = False
+else:
+    forgotten_words_set = set(read_yaml)
+    if(len(forgotten_words_set) == 0):
+        if(forgottenMode): printf(no_forgotten_words, 'r')
+        forgottenMode = False
+forgotten_words = list(forgotten_words_set)
+
 while(True):
-    word = random.choice(words_list)
-    separator = '-' * int(get_terminal_size().columns)
+    if(forgottenMode):
+        word = random.choice(forgotten_words)
+    else:
+        word = random.choice(words_list)
+
     printf(separator, 'h', 'B')
     printf(word, 'g', 'B', True)
     # m for meaning, s for sentence, Return or n for next word, q to quit
@@ -96,7 +120,7 @@ while(True):
             printf(words[word]['meaning'], 'c')
         elif(choice.lower() == 's'):
             if(words[word]['sentence'] == ''):
-                printf("You have not added a sentence for this", 'r', None, True)
+                printf(no_sentence, 'r', None, True)
             else:
                 sentence = words[word]['sentence']
                 split_sentence = sentence.split(' ')
@@ -111,6 +135,15 @@ while(True):
                     else:
                         output += item + ' '
                 printf(output, 'e')
+        elif(choice.lower() == 'f'):
+            if(forgottenMode):
+                printf(already_in_f_mode, 'r')
+                break
+            if(word not in forgotten_words_set):
+                forgotten_words_set.add(word)
+                forgotten_words.append(word)
+            printf(add_to_forgotten, 'r')
+            break
         elif(choice == '' or choice.lower() == 'n'):
             break
         elif(choice.lower() == 'b'):
@@ -118,11 +151,8 @@ while(True):
             printf(separator, 'h', 'B') 
             printf(word, 'g', 'B', True)
         elif(choice.lower() == 'q'):
-            year = date.today().year
-            printf(f"Thanks for trying me out! © Kushal Joseph {year}", 'w', 'B', True)
-            printf(separator, 'h', 'B')
-            exit(0)
+            exitProgram()
         else:
-            print('M for meaning, S for sentence, N for next word, Q to quit', 'r')
+            print(invalid_help, 'r')
 
     previousWord = word
