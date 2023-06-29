@@ -291,7 +291,7 @@ extant - opposite of extinct
 fallacious - (fallacy), belief based of faulty reasoning
 The widespread belief that Eskimos have forty different words for snow is fallacious.
 
-fastidious - fussy, overly concerned with details
+fastidious - fussy, overly concerned with details, in terms or quality, etc
 Whitney is fastidious about her clothes, arranging them in the wardrobe in a specific order, each item evenly spaced.
 
 flux - state of uncertainty about what should be done, (usually, state of flux After some event)
@@ -321,7 +321,7 @@ Monte was no miser, but was simply frugal
 frustrate - hinder or prevent someone’s plans
 The young intern’s multiple interruptions frustrated my plans of completing the task by today
 
-furtive - taking pains to avoid being observed, i.e, caution and secrecy
+furtive - taking pains to avoid being observed, i.e, caution and secrecy, synonym: surrepitious
 While at work, he had to be as furtive as possible to hide the relationship he had with his boss
 
 gainsay - i.e, “against say” against someone or contradict someone, or oppose
@@ -393,7 +393,7 @@ Since the politician preached ethics and morality, his texting of revealing phot
 impertinent - “rude and impertinent”; disrespectful, somewhat irrelevant; pertinent means relevant or applicable
 Dexter, distraught over losing his pet dachshund, Madeline, found the police officer's questions impertinent; after all, he thought, did she have to pry into such details
 
-implacable - unable to be appeased, relentless, unable to be made less angry or hostile; Note: placate means make someone less angry, hence implacable means unable to placate someone
+implacable - unable to be appeased, relentless, unable to be made less angry or hostile; Note: “placate” means “appease”, make someone less angry, hence implacable means unable to placate someone
 Win or lose, the coach was always implacable, never giving the athletes an easy practice or a break
 
 implausible - not believable
@@ -447,7 +447,7 @@ Lilian could not help herself from being insolent, commenting that the Queen's s
 intimate - suggest something, Subtly
 Manfred's teachers intimated to his parents that he was not suited to skip a grade
 
-intransigent - not willing to change one’s beliefs or course of action
+intransigent - not willing to change one’s beliefs or course of action (synonym: obdurate)
 Despite many calls for mercy, the judge remained intransigent, citing strict legal precedence
 
 intrepid - fearless
@@ -555,7 +555,7 @@ Her fledgling (inexperienced, underdeveloped) relationship with Jacob did not wo
 parsimonious - remember “parsi; moni”, very frugal and miserly
 Katie is so parsimonious that she only buys a pair of socks if all of her other socks have holes in them
 
-pedantic - excessively concerned with minor details or rules; overscrupulous
+pedantic - excessively concerned with minor details or Rules and Regulations; overscrupulous
 Professor Thompson’s lectures were utterly pedantic, focused on rigorous details of the most trivial conventions in the field.
 
 pedestrian - lacking imagination or just being average (just a pedestrian, average guy,)
@@ -576,7 +576,7 @@ Ed feels a day doesn't go by in which she isn't whining about some minor issue, 
 placate - gain the good will of by making them less angry
 The teacher was able to placate the angry mob of students by promising them cookies later in the day
 
-platitude - an obvious remark
+platitude - an obvious remark, synonym of “trite”
 Many statements regarded as wise in previous times, are now regarded as mere platitudes, i.e, they are obvious remarks
 
 poignant - emotionally touching
@@ -597,7 +597,7 @@ He was expecting a precipitous (very high) rise in the value of a "hot" tech sto
 preclude - prevent something from happening, making it impossible
 The manager specified that all other gates be locked, to preclude the possibility of persons without tickets entering the arena undetected.
 
-precocious - (Nothing to do with precaution), characteristic of being a prodigy, especially in mental areas
+precocious - (Nothing to do with precaution), characteristic of being a prodigy, or just much advanced for one’s age especially in mental areas
 Though only seven years old, she was a precocious chess prodigy
 
 predilection - a strong liking
@@ -645,7 +645,7 @@ The police chief rebuked the two officers whose irresponsible decisions almost l
 reconcile - make one thing compatible with another
 Peggy was unable to reconcile her kind friend Jane with the cruel and merciless character Jane played on television
 
-recondite - incomprehensible, synonym: abstruse; to one of ordinary understanding or knowledge, not able to understand the meaning; 
+recondite - (not reticent, repudiate) incomprehensible, synonym: abstruse; to one of ordinary understanding or knowledge, not able to understand the meaning; 
 I found the book Ulysses recondite and never finished the book, waiting instead to read it with someone else so we could penetrate its meaning together
 
 refractory - stubbornly resistant to control or authority (remember: Because light is not passing straight, it's bending, hence stubborn)
@@ -696,10 +696,10 @@ Everyone trusted what he said because he was scrupulous and honest.
 soporific - sleep inducing; use ‘soporific effect’
 The bland monotone of the professor gives his lectures a soporific effect
 
-specious - deceptively pleasing, but actually not (false), possible, but actually false; synonym: spurious
+specious - misleading, deceptively pleasing, but actually not (false), possible, but actually false; 
 Image on TV are specious and not to be trusted (OR) He made a career out of specious arguments and fictional lab results, but lost his job and reputation when his lies were exposed by an article
 
-spurious - plausible but false, same as specious
+spurious - similar, not same as specious, false, counterfeit, or not genuine; lacking authenticity or validity.
 It is hard to distinguish the spurious claims from the authentic ones, when a politician speaks
 
 subsume - includes/contains, or consider something else as a part of some general rule
@@ -756,7 +756,7 @@ The absurdly lenient sentence is a travesty of justice
 treacherous - tending to betray; second meaning: Not betray but dangerously unpredictable
 Robert Ford, is remembered more for his treacherous actions (OR) The bridge built from twine and vine is treacherous to walk across
 
-trite - repeated too often, overfamiliar through overuse, banal
+trite - repeated too often, overfamiliar through overuse, banal, synonym for “platitude”
 Trite idioms and expressions are uninteresting and show a lack of imagination on the part of the writer.
 
 underscore - ‘literally underline’, give more weightage to
@@ -786,7 +786,7 @@ We elect our leaders in the hope that every word they speak will be veracious
 vilify - spread negative information about someone (similar, not exact to denigrate). (Note: mollify is make someone less angry)
 Barbara did not hesitate to vilify Todd after their divorce
 
-vindicate - to clear (someone) of accusation, blame, suspicion, or doubt with supporting arguments or proof
+vindicate - to clear (someone) of accusation, blame, suspicion, or doubt with supporting arguments or proof (not to be confused with vindictive)
 Even seven Tour de France wins cannot vindicate Lance Armstrong in the eyes of the public
 
 vociferous - (voice is ferocious) conspicuously and offensively loud
@@ -1002,7 +1002,7 @@ I am surprised by the dearth of fast food chains
 debase - reduce the quality/value of something
 The bad script debased the film so much that not even the flawless acting could save it from being a flop
 
-decimation - destroying or killing large part of Population (people)
+decimation - destroying or killing large part of Population (people), (not to be confused with desecration)
 The decimation after atomic bombs were dropped on Hiroshima and Nagasaki is incomprehensible
 
 deliberate - (many meanings) think about something carefully, weighing pros and cons
@@ -1083,7 +1083,7 @@ Stranded in a cabin over the winter, Terry was able to eke out an existence on c
 elaborate (adj) - marked by complexity and richness in detail
 Thomas, on returning from Morocco, replaced his dirty gray carpet with an elaborate one he'd brought back with him.
 
-elude - escape understanding
+elude - escape understanding (don’t be confused with “allude”)
 Even a basic understanding of physics can elude most high schools students
 
 elusive - difficult to find, capture, or remember “the elusive IPL trophy”
@@ -1342,7 +1342,7 @@ The earnestness of the daytime talk shows of the 1970's has morphed into somethi
 muted - softened, subdued
 Helen preferred muted earth colors, such as green and brown, to the bright pinks and red her sister liked
 
-obdurate - intransigent; stubbornly persistent in changing an opinion or action (somewhat, but not really similar to dogmatic)
+obdurate - intransigent; stubbornly persistent in changing an opinion or action
 No number of pleas and bribes would get him to change his obdurate attitude.
 
 obliging - showing a Cheerful Willingness to do favors for others
@@ -1662,6 +1662,7 @@ Although she never traveled herself, she experienced a sense of vicarious advent
 
 vie - compete 
 While the other teams in the division actively vie, i.e, compete for the championship, this team seems content simply to go through the motions of playing
+
 vindictive - strong desire for revenge
 Vanessa was so vindictive that she waited for an entire semester to get the perfect revenge
 
